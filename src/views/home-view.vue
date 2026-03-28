@@ -107,11 +107,11 @@ const roadmapItems = [
     </nav>
 
     <!-- ── HERO ── -->
-    <section class="min-h-screen bg-[#0a1628] relative overflow-hidden pt-[120px] pb-20">
+    <section class="min-h-screen bg-[#0a1628] relative overflow-hidden pt-[120px] pb-20 flex flex-col justify-center items-start lg:block">
       <div class="hero-bg-glow"></div>
       <div class="hero-grid"></div>
 
-      <div class="max-w-6xl mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-20 relative z-[1]">
+      <div class="w-full max-w-6xl mx-auto px-5 md:px-10 lg:px-10 grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-20 relative z-[1]">
 
       <div class="relative z-[1]">
         <div class="hero-badge">
@@ -119,7 +119,7 @@ const roadmapItems = [
           Built for laundromats. Simple by design.
         </div>
 
-        <h1 class="font-display text-5xl lg:text-7xl font-medium leading-none tracking-[-0.035em] text-white mb-6 hero-anim-1">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-[-0.035em] text-white mb-6 hero-anim-1 capitalize">
           Simple tools for<br>
           laundromat owners<br>
           <span class="bg-gradient-to-br from-[#93c5fd] to-[#67e8f9] bg-clip-text text-transparent">who do it all.</span>
@@ -134,7 +134,7 @@ const roadmapItems = [
             Get Early Access
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#how" class="text-white/50 hover:text-white/85 text-base font-medium no-underline inline-flex items-center justify-center sm:justify-start gap-1.5 transition-colors py-2">
+          <a href="#how" class="text-white/50 hover:text-white/85 text-base font-medium no-underline inline-flex items-center justify-center gap-1.5 transition-colors py-2">
             See How It Works
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
