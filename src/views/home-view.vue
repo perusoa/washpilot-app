@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import logo from '@/assets/logos/logo-6.png'
 import logoDark from '@/assets/logos/logo-1.png'
+import icon9 from '@/assets/icons/icon-9.png'
 
 const email = ref('')
 
@@ -24,7 +25,7 @@ const problemCards = [
   {
     num: '03',
     title: 'Staff is expensive',
-    text: 'A part-time attendant runs $1,500–$2,000/month. WashPilot replaces that coverage for $29 — without the HR headaches.',
+    text: 'A part-time attendant runs $1,500–$2,000/month. WashPilot replaces that coverage for a fraction of the cost — without the HR headaches.',
   },
 ]
 
@@ -43,13 +44,12 @@ const featuredBullets = [
   'Customer can flip to rear camera to show machines',
 ]
 
-const freeFeats = ['1 location', 'Unlimited calls', 'SMS notifications', 'QR code + setup help']
-const paidFeats = [
-  'Unlimited video calls',
+const foundingFeats = [
+  'Unlimited live video calls',
   'SMS + voice call alerts',
   'Full call history & logs',
-  'Missed call protection',
-  'Custom QR code branding',
+  'Custom QR code for your location',
+  'Direct input on what we build next',
 ]
 
 const roadmapItems = [
@@ -112,30 +112,15 @@ const roadmapItems = [
           WashPilot is built for laundromat owners, not IT departments. Start with one feature — remote customer assistance via live video — and grow with us as we build the platform your laundromat deserves.
         </p>
 
-        <div class="flex items-center gap-4 hero-anim-3">
-          <a href="#cta" class="bg-[#2563eb] hover:bg-[#3b82f6] hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(37,99,235,0.45)] text-white px-[2.125rem] py-[0.9375rem] rounded-[10px] font-display text-base font-semibold no-underline inline-flex items-center gap-2 transition-all">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 hero-anim-3">
+          <a href="#cta" class="bg-[#2563eb] hover:bg-[#3b82f6] hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(37,99,235,0.45)] text-white px-8 py-4 rounded-[10px] font-display text-base font-semibold no-underline inline-flex items-center justify-center gap-2 transition-all">
             Get Early Access
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#how" class="text-white/50 hover:text-white/85 text-base font-medium no-underline inline-flex items-center gap-1.5 transition-colors">
+          <a href="#how" class="text-white/50 hover:text-white/85 text-base font-medium no-underline inline-flex items-center justify-center sm:justify-start gap-1.5 transition-colors py-2">
             See How It Works
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-        </div>
-
-        <div class="flex gap-10 mt-14 pt-8 border-t border-white/[0.08] hero-anim-4">
-          <div>
-            <div class="font-display text-3xl font-bold text-white tracking-[-0.03em] leading-none mb-1">30<span class="text-[#06b6d4]">s</span></div>
-            <div class="text-xs text-white/35 font-medium tracking-[0.02em] uppercase">Avg. response time</div>
-          </div>
-          <div>
-            <div class="font-display text-3xl font-bold text-white tracking-[-0.03em] leading-none mb-1">$0</div>
-            <div class="text-xs text-white/35 font-medium tracking-[0.02em] uppercase">To get started</div>
-          </div>
-          <div>
-            <div class="font-display text-3xl font-bold text-white tracking-[-0.03em] leading-none mb-1">90<span class="text-[#06b6d4]">d</span></div>
-            <div class="text-xs text-white/35 font-medium tracking-[0.02em] uppercase">Free trial</div>
-          </div>
         </div>
       </div>
 
@@ -151,11 +136,7 @@ const roadmapItems = [
                 </div>
                 <div class="text-center">
                   <div class="w-[72px] h-[72px] bg-[rgba(37,99,235,0.15)] border border-[rgba(59,130,246,0.2)] rounded-[22px] mx-auto mb-3.5 flex items-center justify-center">
-                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="9"/>
-                      <path d="M12 7v5l3 3"/>
-                      <path d="M6 3.5A9 9 0 0 1 21 12"/>
-                    </svg>
+                    <img :src="icon9" alt="" class="w-10 h-10 object-contain" style="filter: invert(1) sepia(1) saturate(2) hue-rotate(190deg) brightness(1.4);" />
                   </div>
                   <div class="font-display text-xl font-bold text-white tracking-[-0.02em] mb-1">WashPilot</div>
                   <div class="text-xs text-white/35">Help is one tap away</div>
@@ -197,17 +178,17 @@ const roadmapItems = [
     </section>
 
     <!-- ── PROBLEM ── -->
-    <section class="py-20 bg-white">
+    <section class="py-12 lg:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-5 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-10 lg:mb-16">
           <div>
             <div class="section-overline">The Problem</div>
-            <h2 class="font-display text-4xl lg:text-5xl font-medium leading-none tracking-[-0.03em] text-slate-900">
+            <h2 class="font-display text-3xl lg:text-5xl font-medium leading-none tracking-[-0.03em] text-slate-900">
               Unattended Laundromats <em class="not-italic text-[#1e4fa0]">Lose Customers</em> Every Single Day.
             </h2>
           </div>
           <div>
-            <p class="text-base text-slate-500 leading-relaxed font-normal pt-10">
+            <p class="text-base text-slate-500 leading-relaxed font-normal lg:pt-10">
               When a machine breaks, a payment fails, or a customer is confused — and nobody is there to help — they leave frustrated and don't come back. The laundromat industry has been underserved by technology for decades. WashPilot fixes that, one simple tool at a time.
             </p>
           </div>
@@ -227,18 +208,18 @@ const roadmapItems = [
     </section>
 
     <!-- ── HOW IT WORKS ── -->
-    <section id="how" class="py-20 bg-[#0a1628] relative overflow-hidden">
+    <section id="how" class="py-12 lg:py-20 bg-[#0a1628] relative overflow-hidden">
       <div class="how-grid"></div>
       <div class="max-w-6xl mx-auto px-5 lg:px-10 relative">
-        <div class="text-center mb-14">
+        <div class="text-center mb-8 lg:mb-14">
           <div class="section-overline-light">How it works</div>
-          <h2 class="font-display text-4xl lg:text-5xl font-medium tracking-[-0.03em] text-white mb-4 leading-none">Three Steps. That's It.</h2>
+          <h2 class="font-display text-3xl lg:text-5xl font-medium tracking-[-0.03em] text-white mb-3 lg:mb-4 leading-none">Three Steps. That's It.</h2>
           <p class="text-base text-white/40 font-light max-w-[420px] mx-auto">No manuals. No training. No IT person required. If you can post a sign, you can use WashPilot.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_60px_1fr_60px_1fr] items-start gap-0">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_60px_1fr_60px_1fr] items-start gap-4 md:gap-0">
           <!-- Step 1 -->
-          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
+          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-6 lg:p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
             <div class="w-10 h-10 bg-[#1e4fa0] rounded-[10px] flex items-center justify-center font-display text-base font-bold text-white mb-6">01</div>
             <div class="h-[72px] flex items-center mb-6">
               <div class="qr-block">
@@ -255,7 +236,7 @@ const roadmapItems = [
           </div>
 
           <!-- Step 2 -->
-          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
+          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-6 lg:p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
             <div class="w-10 h-10 bg-[#1e4fa0] rounded-[10px] flex items-center justify-center font-display text-base font-bold text-white mb-6">02</div>
             <div class="h-[72px] flex items-center mb-6">
               <div class="bg-[#1e4fa0] rounded-[12px_12px_12px_3px] px-3.5 py-2.5 text-xs text-white font-medium max-w-[200px] leading-normal">
@@ -273,7 +254,7 @@ const roadmapItems = [
           </div>
 
           <!-- Step 3 -->
-          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
+          <div class="bg-white/[0.04] border border-white/[0.07] rounded-[20px] p-6 lg:p-9 transition-all hover:bg-[rgba(37,99,235,0.12)] hover:border-[rgba(59,130,246,0.25)] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(37,99,235,0.2)]">
             <div class="w-10 h-10 bg-[#1e4fa0] rounded-[10px] flex items-center justify-center font-display text-base font-bold text-white mb-6">03</div>
             <div class="h-[72px] flex items-center mb-6">
               <div class="flex items-center gap-2.5 w-full">
@@ -290,11 +271,11 @@ const roadmapItems = [
     </section>
 
     <!-- ── FEATURES ── -->
-    <section id="features" class="py-20 bg-slate-50">
+    <section id="features" class="py-12 lg:py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-5 lg:px-10">
-        <div class="text-center mb-10">
+        <div class="text-center mb-8 lg:mb-10">
           <div class="section-overline justify-center">Features — Starting with</div>
-          <h2 class="font-display text-4xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-2">One Feature, Done Right.</h2>
+          <h2 class="font-display text-3xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-2">One Feature, Done Right.</h2>
           <p class="text-slate-400 text-base font-light max-w-[480px] mx-auto mt-3">
             We're starting with remote customer assistance. Machine status boards, owner dashboards, and more are on the roadmap. Simple now. More powerful as we grow together.
           </p>
@@ -302,7 +283,7 @@ const roadmapItems = [
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <!-- Featured card -->
-          <div class="bg-[#0a1628] border border-[rgba(59,130,246,0.2)] rounded-[20px] p-10 lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="bg-[#0a1628] border border-[rgba(59,130,246,0.2)] rounded-[20px] p-6 lg:p-10 lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <div>
               <div class="w-[52px] h-[52px] bg-[rgba(37,99,235,0.2)] rounded-[14px] flex items-center justify-center mb-5">
                 <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -335,7 +316,7 @@ const roadmapItems = [
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
                 </button>
                 <button class="w-[42px] h-[42px] rounded-full bg-red-500 border-0 flex items-center justify-center cursor-pointer transition-transform hover:scale-110">
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A2 2 0 0 1 9.72 19"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.5a19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1H7a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6z"/><line x1="23" y1="1" x2="1" y2="23"/></svg>
                 </button>
                 <button class="w-[42px] h-[42px] rounded-full bg-white/10 border-0 flex items-center justify-center cursor-pointer transition-transform hover:scale-110">
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -345,7 +326,7 @@ const roadmapItems = [
           </div>
 
           <!-- SMS + voice -->
-          <div class="bg-white border border-slate-200 rounded-[20px] p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
+          <div class="bg-white border border-slate-200 rounded-[20px] p-6 lg:p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
             <div class="w-[52px] h-[52px] bg-blue-50 rounded-[14px] flex items-center justify-center mb-5">
               <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="#1e4fa0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.5a19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1H7a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -356,7 +337,7 @@ const roadmapItems = [
           </div>
 
           <!-- Multi-location -->
-          <div class="bg-white border border-slate-200 rounded-[20px] p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
+          <div class="bg-white border border-slate-200 rounded-[20px] p-6 lg:p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
             <div class="w-[52px] h-[52px] bg-blue-50 rounded-[14px] flex items-center justify-center mb-5">
               <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="#1e4fa0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
@@ -367,7 +348,7 @@ const roadmapItems = [
           </div>
 
           <!-- Zero friction -->
-          <div class="bg-white border border-slate-200 rounded-[20px] p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
+          <div class="bg-white border border-slate-200 rounded-[20px] p-6 lg:p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
             <div class="w-[52px] h-[52px] bg-blue-50 rounded-[14px] flex items-center justify-center mb-5">
               <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="#1e4fa0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -377,27 +358,27 @@ const roadmapItems = [
             <div class="text-sm text-slate-500 leading-relaxed">Scan → tap → connected. No app download, no account, no password. Any smartphone, any browser. The lowest possible barrier to getting help.</div>
           </div>
 
-          <!-- Missed call protection -->
-          <div class="bg-white border border-slate-200 rounded-[20px] p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
+          <!-- Crystal clear call quality -->
+          <div class="bg-white border border-slate-200 rounded-[20px] p-6 lg:p-8 transition-all hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-0.5">
             <div class="w-[52px] h-[52px] bg-blue-50 rounded-[14px] flex items-center justify-center mb-5">
               <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="#1e4fa0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
               </svg>
             </div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">Missed call protection</div>
-            <div class="text-sm text-slate-500 leading-relaxed">If you can't pick up, customers see a friendly message instead of silence. Every interaction is logged so you can follow up and nothing falls through.</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">Crystal Clear Call Quality</div>
+            <div class="text-sm text-slate-500 leading-relaxed">Powered by GetStream, every video call is low-latency and high-definition. See machine displays, read error codes, and hear customers clearly — no dropped calls, no guesswork.</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ── ROADMAP ── -->
-    <section class="py-20 bg-[#0a1628] relative overflow-hidden">
+    <section class="py-12 lg:py-20 bg-[#0a1628] relative overflow-hidden">
       <div class="how-grid"></div>
       <div class="max-w-6xl mx-auto px-5 lg:px-10 relative">
-        <div class="text-center mb-12">
+        <div class="text-center mb-8 lg:mb-12">
           <div class="section-overline-light">What's coming next</div>
-          <h2 class="font-display text-4xl lg:text-5xl font-medium text-white tracking-[-0.03em] leading-tight mb-3.5">This Is Just The Beginning.</h2>
+          <h2 class="font-display text-3xl lg:text-5xl font-medium text-white tracking-[-0.03em] leading-tight mb-3">This Is Just The Beginning.</h2>
           <p class="text-white/40 text-base font-light max-w-[460px] mx-auto leading-relaxed">
             WashPilot is building the operating system for unattended laundromats. Remote assistance is feature one. Here's what's on the roadmap.
           </p>
@@ -407,7 +388,7 @@ const roadmapItems = [
           <div
             v-for="item in roadmapItems"
             :key="item.title"
-            class="rounded-2xl p-7 relative overflow-hidden"
+            class="rounded-2xl p-5 lg:p-7 relative overflow-hidden"
             :class="item.live
               ? 'bg-white/[0.04] border border-white/[0.07]'
               : 'bg-white/[0.03] border border-dashed border-white/10 opacity-85'"
@@ -446,66 +427,37 @@ const roadmapItems = [
       </div>
     </section>
 
-    <!-- ── PRICING ── -->
-    <section id="pricing" class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-5 lg:px-10">
-        <div class="text-center mb-12">
-          <div class="section-overline justify-center">Pricing</div>
-          <h2 class="font-display text-4xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-3">Flat, Simple Pricing.</h2>
-          <p class="text-slate-400 text-base font-light">No per-call fees. No usage caps. One rate per location.</p>
+    <!-- ── ACCESS ── -->
+    <section id="pricing" class="py-12 lg:py-20 bg-white">
+      <div class="max-w-2xl mx-auto px-5 lg:px-10">
+        <div class="text-center mb-10">
+          <div class="section-overline justify-center">Early Access</div>
+          <h2 class="font-display text-4xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-3">Founding Member Access.</h2>
+          <p class="text-slate-400 text-base font-light leading-relaxed">We're onboarding a limited number of laundromat owners before public launch. No credit card. No commitment.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Free trial -->
-          <div class="border border-slate-200 rounded-3xl p-10 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-0.5">
-            <div class="font-display text-xs font-bold tracking-[0.1em] uppercase text-slate-400 mb-5">Free Trial</div>
-            <div class="flex items-baseline gap-1 mb-2">
-              <span class="font-display text-xl font-semibold text-slate-500 self-start mt-2">$</span>
-              <span class="font-display text-6xl font-bold text-slate-900 leading-none tracking-[-0.04em]">0</span>
-              <span class="text-sm text-slate-400 self-end mb-1">/ 90 days</span>
-            </div>
-            <p class="text-sm text-slate-500 leading-relaxed mb-8">Try WashPilot completely free for 90 days. No credit card, no commitment.</p>
-            <ul class="flex flex-col gap-3 list-none m-0 p-0 mb-8">
-              <li v-for="f in freeFeats" :key="f" class="text-sm text-slate-600 flex items-center gap-3">
-                <span class="price-check"></span>{{ f }}
-              </li>
-            </ul>
-            <a href="#cta" class="block w-full py-4 rounded-xl font-display text-base font-semibold text-center text-slate-700 border border-slate-300 hover:border-blue-500 hover:text-[#1e4fa0] transition-all no-underline">
-              Start Free Trial
-            </a>
+        <div class="bg-[#0a1628] border border-[rgba(59,130,246,0.2)] rounded-3xl p-8 lg:p-10">
+          <div class="inline-flex items-center gap-2 bg-[rgba(6,182,212,0.15)] border border-[rgba(6,182,212,0.25)] text-[#67e8f9] px-3 py-1 rounded-full text-xs font-bold tracking-[0.06em] uppercase mb-6">
+            Limited spots available
           </div>
-
-          <!-- Paid -->
-          <div class="relative bg-[#2563eb] border border-[#2563eb] rounded-3xl p-10 shadow-[0_24px_64px_rgba(37,99,235,0.35)] -translate-y-1.5">
-            <div class="absolute top-[-13px] left-1/2 -translate-x-1/2 bg-[#06b6d4] text-[#0a1628] py-[3px] px-4 rounded-full text-xs font-bold tracking-[0.06em] uppercase whitespace-nowrap">
-              Most popular
-            </div>
-            <div class="font-display text-xs font-bold tracking-[0.1em] uppercase text-white/50 mb-5">Per Location</div>
-            <div class="flex items-baseline gap-1 mb-2">
-              <span class="font-display text-xl font-semibold text-white/60 self-start mt-2">$</span>
-              <span class="font-display text-6xl font-bold text-white leading-none tracking-[-0.04em]">29</span>
-              <span class="text-sm text-white/40 self-end mb-1">/ mo</span>
-            </div>
-            <p class="text-sm text-white/50 leading-relaxed mb-8">Everything you need to be virtually present. Less than two hours of staff wages per month.</p>
-            <ul class="flex flex-col gap-3 list-none m-0 p-0 mb-8">
-              <li v-for="f in paidFeats" :key="f" class="text-sm text-white/75 flex items-center gap-3">
-                <span class="price-check-white"></span>{{ f }}
-              </li>
-            </ul>
-            <a href="#cta" class="block w-full py-4 rounded-xl font-display text-base font-semibold text-center text-[#1d3e75] bg-white hover:bg-blue-50 transition-all no-underline">
-              Get Started
-            </a>
-          </div>
+          <p class="text-base text-white/60 leading-relaxed mb-6">
+            Founding members get full access to WashPilot — live video assistance, SMS alerts, and everything we build next — while we're still in early development. In return, your feedback shapes the product directly.
+          </p>
+          <ul class="flex flex-col gap-3 list-none m-0 p-0 mb-8">
+            <li v-for="f in foundingFeats" :key="f" class="text-sm text-white/70 flex items-center gap-3">
+              <span class="price-check-white shrink-0"></span>{{ f }}
+            </li>
+          </ul>
+          <a href="mailto:hello@washpilot.app" class="block w-full py-4 rounded-xl font-display text-base font-semibold text-center text-white bg-[#2563eb] hover:bg-[#3b82f6] transition-all no-underline">
+            Request Access
+          </a>
+          <p class="text-center mt-4 text-xs text-white/25">We'll reach out within 24 hours to get you set up.</p>
         </div>
-
-        <p class="text-center mt-8 text-sm text-slate-400">
-          Running 3+ locations? <a href="#cta" class="text-[#1e4fa0] font-semibold no-underline">Contact Us</a> for multi-location pricing.
-        </p>
       </div>
     </section>
 
     <!-- ── TESTIMONIAL ── -->
-    <section class="py-[4.5rem] bg-blue-50">
+    <section class="py-12 lg:py-16 bg-blue-50">
       <div class="max-w-2xl mx-auto text-center px-5">
         <div class="w-[52px] h-[52px] bg-blue-100 rounded-2xl mx-auto mb-7 flex items-center justify-center">
           <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="#2563eb">
@@ -526,21 +478,21 @@ const roadmapItems = [
     </section>
 
     <!-- ── CTA ── -->
-    <section id="cta" class="py-20 bg-gradient-to-br from-[#0f1f3d] to-[#0a1628] relative overflow-hidden text-center">
+    <section id="cta" class="py-12 lg:py-20 bg-gradient-to-br from-[#0f1f3d] to-[#0a1628] relative overflow-hidden text-center">
       <div class="how-grid opacity-50"></div>
       <div class="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 65%);"></div>
       <div class="max-w-xl mx-auto px-5 relative z-[1]">
         <div class="inline-flex items-center gap-2 bg-[rgba(6,182,212,0.15)] border border-[rgba(6,182,212,0.25)] text-[#67e8f9] px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.06em] uppercase mb-8">
           🛠 Founding member access
         </div>
-        <h2 class="font-display text-4xl lg:text-5xl font-medium text-white tracking-[-0.03em] leading-none mb-5">
+        <h2 class="font-display text-3xl lg:text-5xl font-medium text-white tracking-[-0.03em] leading-none mb-4 lg:mb-5">
           Start Simple.<br>
           <span class="bg-gradient-to-br from-[#93c5fd] to-[#67e8f9] bg-clip-text text-transparent">Grow With Us.</span>
         </h2>
         <p class="text-base text-white/40 font-light mb-10 leading-relaxed">
           Join as a founding member and get 90 days free. You'll shape what WashPilot builds next — and lock in a founding rate before we open to the public.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 max-w-[460px] mx-auto mb-4">
+        <div class="flex flex-col gap-3 w-full max-w-md mx-auto mb-4">
           <input
             v-model="email"
             type="email"
