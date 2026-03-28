@@ -78,19 +78,23 @@ const roadmapItems = [
   <div class="font-sans bg-white text-slate-800 leading-relaxed overflow-x-hidden">
 
     <!-- ── NAV ── -->
-    <nav class="fixed top-0 left-0 right-0 z-[100] h-[68px] px-5 lg:px-20 flex items-center justify-between bg-white/[0.92] backdrop-blur-xl border-b border-slate-200">
-      <a href="#" class="no-underline">
-        <img :src="logo" alt="WashPilot" class="h-8 w-auto" />
-      </a>
-      <a href="#cta" class="text-sm font-semibold text-white bg-[#1e4fa0] hover:bg-[#1d3e75] hover:shadow-[0_4px_16px_rgba(37,99,235,0.3)] px-5 py-2.5 rounded-lg transition-all no-underline">
-        Get Early Access
-      </a>
+    <nav class="fixed top-0 left-0 right-0 z-[100] h-[68px] flex items-center bg-white/[0.92] backdrop-blur-xl border-b border-slate-200">
+      <div class="max-w-6xl mx-auto w-full px-5 lg:px-10 flex items-center justify-between">
+        <a href="#" class="no-underline">
+          <img :src="logo" alt="WashPilot" class="h-8 w-auto" />
+        </a>
+        <a href="#cta" class="text-sm font-semibold text-white bg-[#1e4fa0] hover:bg-[#1d3e75] hover:shadow-[0_4px_16px_rgba(37,99,235,0.3)] px-5 py-2.5 rounded-lg transition-all no-underline">
+          Get Early Access
+        </a>
+      </div>
     </nav>
 
     <!-- ── HERO ── -->
-    <section class="min-h-screen bg-[#0a1628] grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center px-5 lg:px-20 pt-[120px] pb-20 gap-20 relative overflow-hidden">
+    <section class="min-h-screen bg-[#0a1628] relative overflow-hidden pt-[120px] pb-20">
       <div class="hero-bg-glow"></div>
       <div class="hero-grid"></div>
+
+      <div class="max-w-6xl mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-20 relative z-[1]">
 
       <div class="relative z-[1]">
         <div class="hero-badge">
@@ -188,11 +192,13 @@ const roadmapItems = [
           </div>
         </div>
       </div>
+
+      </div><!-- end inner container -->
     </section>
 
     <!-- ── PROBLEM ── -->
-    <section class="py-20 px-5 lg:px-20 bg-white">
-      <div class="max-w-[1100px] mx-auto">
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-5 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <div>
             <div class="section-overline">The Problem</div>
@@ -221,9 +227,9 @@ const roadmapItems = [
     </section>
 
     <!-- ── HOW IT WORKS ── -->
-    <section id="how" class="py-20 px-5 lg:px-20 bg-[#0a1628] relative overflow-hidden">
+    <section id="how" class="py-20 bg-[#0a1628] relative overflow-hidden">
       <div class="how-grid"></div>
-      <div class="max-w-[1100px] mx-auto relative">
+      <div class="max-w-6xl mx-auto px-5 lg:px-10 relative">
         <div class="text-center mb-14">
           <div class="section-overline-light">How it works</div>
           <h2 class="font-display text-4xl lg:text-5xl font-medium tracking-[-0.03em] text-white mb-4 leading-none">Three Steps. That's It.</h2>
@@ -284,8 +290,8 @@ const roadmapItems = [
     </section>
 
     <!-- ── FEATURES ── -->
-    <section id="features" class="py-20 px-5 lg:px-20 bg-slate-50">
-      <div class="max-w-[1100px] mx-auto">
+    <section id="features" class="py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-5 lg:px-10">
         <div class="text-center mb-10">
           <div class="section-overline justify-center">Features — Starting with</div>
           <h2 class="font-display text-4xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-2">One Feature, Done Right.</h2>
@@ -386,9 +392,9 @@ const roadmapItems = [
     </section>
 
     <!-- ── ROADMAP ── -->
-    <section class="py-20 px-5 lg:px-20 bg-[#0a1628] relative overflow-hidden">
+    <section class="py-20 bg-[#0a1628] relative overflow-hidden">
       <div class="how-grid"></div>
-      <div class="max-w-[1100px] mx-auto relative">
+      <div class="max-w-6xl mx-auto px-5 lg:px-10 relative">
         <div class="text-center mb-12">
           <div class="section-overline-light">What's coming next</div>
           <h2 class="font-display text-4xl lg:text-5xl font-medium text-white tracking-[-0.03em] leading-tight mb-3.5">This Is Just The Beginning.</h2>
@@ -441,8 +447,8 @@ const roadmapItems = [
     </section>
 
     <!-- ── PRICING ── -->
-    <section id="pricing" class="py-20 px-5 lg:px-20 bg-white">
-      <div class="max-w-[920px] mx-auto">
+    <section id="pricing" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-5 lg:px-10">
         <div class="text-center mb-12">
           <div class="section-overline justify-center">Pricing</div>
           <h2 class="font-display text-4xl lg:text-5xl font-medium text-slate-900 tracking-[-0.03em] leading-none mb-3">Flat, Simple Pricing.</h2>
@@ -499,8 +505,8 @@ const roadmapItems = [
     </section>
 
     <!-- ── TESTIMONIAL ── -->
-    <section class="py-[4.5rem] px-5 lg:px-20 bg-blue-50">
-      <div class="max-w-[680px] mx-auto text-center">
+    <section class="py-[4.5rem] bg-blue-50">
+      <div class="max-w-2xl mx-auto text-center px-5">
         <div class="w-[52px] h-[52px] bg-blue-100 rounded-2xl mx-auto mb-7 flex items-center justify-center">
           <svg class="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="#2563eb">
             <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1zm12 0c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
@@ -520,10 +526,10 @@ const roadmapItems = [
     </section>
 
     <!-- ── CTA ── -->
-    <section id="cta" class="py-20 px-5 lg:px-20 bg-gradient-to-br from-[#0f1f3d] to-[#0a1628] relative overflow-hidden text-center">
+    <section id="cta" class="py-20 bg-gradient-to-br from-[#0f1f3d] to-[#0a1628] relative overflow-hidden text-center">
       <div class="how-grid opacity-50"></div>
       <div class="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 65%);"></div>
-      <div class="max-w-[580px] mx-auto relative z-[1]">
+      <div class="max-w-xl mx-auto px-5 relative z-[1]">
         <div class="inline-flex items-center gap-2 bg-[rgba(6,182,212,0.15)] border border-[rgba(6,182,212,0.25)] text-[#67e8f9] px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.06em] uppercase mb-8">
           🛠 Founding member access
         </div>
@@ -550,14 +556,16 @@ const roadmapItems = [
     </section>
 
     <!-- ── FOOTER ── -->
-    <footer class="bg-[#0a1628] border-t border-white/[0.05] px-5 lg:px-20 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <img :src="logoDark" alt="WashPilot" class="h-7 w-auto opacity-60" />
-      <p class="text-xs text-white/20">© 2025 WashPilot. All rights reserved.</p>
-      <ul class="flex gap-8 list-none m-0 p-0">
-        <li v-for="link in ['Privacy', 'Terms', 'Contact']" :key="link">
-          <a href="#" class="text-xs text-white/25 hover:text-white/60 transition-colors no-underline">{{ link }}</a>
-        </li>
-      </ul>
+    <footer class="bg-[#0a1628] border-t border-white/[0.05] py-8">
+      <div class="max-w-6xl mx-auto px-5 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <img :src="logoDark" alt="WashPilot" class="h-7 w-auto opacity-60" />
+        <p class="text-xs text-white/20">© 2025 WashPilot. All rights reserved.</p>
+        <ul class="flex gap-8 list-none m-0 p-0">
+          <li v-for="link in ['Privacy', 'Terms', 'Contact']" :key="link">
+            <a href="#" class="text-xs text-white/25 hover:text-white/60 transition-colors no-underline">{{ link }}</a>
+          </li>
+        </ul>
+      </div>
     </footer>
 
   </div>
