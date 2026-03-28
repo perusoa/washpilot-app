@@ -5,6 +5,23 @@ import logoDark from '@/assets/logos/logo-1.png'
 import icon9 from '@/assets/icons/icon-9.png'
 
 const email = ref('')
+const submitted = ref(false)
+const submitting = ref(false)
+
+async function handleSubmit() {
+  if (!email.value) return
+  submitting.value = true
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'early-access', email: email.value }).toString(),
+    })
+  } finally {
+    submitted.value = true
+    submitting.value = false
+  }
+}
 
 const scrolled = ref(false)
 const onScroll = () => { scrolled.value = window.scrollY > 40 }
@@ -200,7 +217,7 @@ const roadmapItems = [
             class="prob-card bg-slate-50 border border-slate-200 rounded-2xl p-8 transition-all hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] hover:-translate-y-0.5"
           >
             <div class="font-display text-6xl font-bold text-blue-100 leading-none mb-5 tracking-[-0.04em]">{{ card.num }}</div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2.5 tracking-tight">{{ card.title }}</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2.5 tracking-tight capitalize">{{ card.title }}</div>
             <div class="text-sm text-slate-500 leading-relaxed">{{ card.text }}</div>
           </div>
         </div>
@@ -226,7 +243,7 @@ const roadmapItems = [
                 <div v-for="(b, i) in qrPattern" :key="i" :class="['qc', b ? 'b' : '']"></div>
               </div>
             </div>
-            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight">Customer scans your QR code</div>
+            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight capitalize">Customer scans your QR code</div>
             <div class="text-sm text-white/45 leading-relaxed">Post one WashPilot QR code at your location. Any customer who needs help scans it with their phone camera — no app, no login.</div>
           </div>
 
@@ -244,7 +261,7 @@ const roadmapItems = [
                 Someone needs help at Super Wash! Tap to join: washpilot.app/s/k8xP2 (30 min)
               </div>
             </div>
-            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight">You get a text with a join link</div>
+            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight capitalize">You get a text with a join link</div>
             <div class="text-sm text-white/45 leading-relaxed">The instant they tap "Request Assistance," you get an SMS with a unique link. One tap and you're in the call — no login required on your end either.</div>
           </div>
 
@@ -263,7 +280,7 @@ const roadmapItems = [
                 <div class="w-12 h-12 rounded-full bg-[#1e4fa0] flex items-center justify-center text-xl shrink-0">👨‍💼</div>
               </div>
             </div>
-            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight">You see it. You solve it. In seconds.</div>
+            <div class="font-display text-xl font-medium text-white mb-2.5 tracking-tight capitalize">You see it. You solve it. In seconds.</div>
             <div class="text-sm text-white/45 leading-relaxed">You see exactly what the customer is pointing at through their camera. You talk them through the fix — from anywhere you happen to be.</div>
           </div>
         </div>
@@ -290,7 +307,7 @@ const roadmapItems = [
                   <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                 </svg>
               </div>
-              <div class="font-display text-2xl font-medium text-white mb-2 tracking-tight">Live video assistance, on demand</div>
+              <div class="font-display text-2xl font-medium text-white mb-2 tracking-tight capitalize">Live video assistance, on demand</div>
               <div class="text-sm text-white/45 leading-relaxed mb-5">
                 Your customer's camera streams live directly to you. See exactly what they're pointing at — a machine display, a door that won't open, a payment panel. Your voice guides them to the fix in real time.
               </div>
@@ -332,8 +349,8 @@ const roadmapItems = [
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.5a19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1H7a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">SMS + voice call alerts</div>
-            <div class="text-sm text-slate-500 leading-relaxed">You get an SMS the instant a customer requests help. If you don't respond in 15 seconds, WashPilot calls your phone directly — so you never miss a customer who needs you.</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight capitalize">SMS + voice call alerts</div>
+            <div class="text-sm text-slate-500 leading-relaxed">You get an SMS the instant a customer requests help. If you don't respond in 30 seconds, WashPilot calls your phone directly — so you never miss a customer who needs you.</div>
           </div>
 
           <!-- Multi-location -->
@@ -343,7 +360,7 @@ const roadmapItems = [
                 <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
               </svg>
             </div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">Multi-location ready</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight capitalize">Multi-location ready</div>
             <div class="text-sm text-slate-500 leading-relaxed">Own more than one laundromat? Manage every location from a single dashboard. Each gets its own unique QR code. All calls route to you.</div>
           </div>
 
@@ -354,7 +371,7 @@ const roadmapItems = [
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">Zero friction for customers</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight capitalize">Zero friction for customers</div>
             <div class="text-sm text-slate-500 leading-relaxed">Scan → tap → connected. No app download, no account, no password. Any smartphone, any browser. The lowest possible barrier to getting help.</div>
           </div>
 
@@ -365,7 +382,7 @@ const roadmapItems = [
                 <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
               </svg>
             </div>
-            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight">Crystal Clear Call Quality</div>
+            <div class="font-display text-xl font-medium text-slate-900 mb-2 tracking-tight capitalize">Crystal Clear Call Quality</div>
             <div class="text-sm text-slate-500 leading-relaxed">Powered by GetStream, every video call is low-latency and high-definition. See machine displays, read error codes, and hear customers clearly — no dropped calls, no guesswork.</div>
           </div>
         </div>
@@ -468,10 +485,10 @@ const roadmapItems = [
           "I used to miss calls from customers constantly. Now they scan the code, I can see exactly what they're dealing with, and I talk them through it in seconds — even when I'm at home. It's completely changed how I run my laundromat."
         </p>
         <div class="flex items-center justify-center gap-4">
-          <div class="w-[46px] h-[46px] bg-[#2563eb] rounded-full flex items-center justify-center font-display text-lg font-bold text-white">A</div>
+          <div class="w-[46px] h-[46px] bg-[#2563eb] rounded-full flex items-center justify-center font-display text-lg font-bold text-white">J</div>
           <div class="text-left">
-            <strong class="block text-sm font-semibold text-slate-800">Anthony R.</strong>
-            <span class="text-xs text-slate-400">Owner, Super Wash Laundromat · Sussex, NJ</span>
+            <strong class="block text-sm font-semibold text-slate-800">John P.</strong>
+            <span class="text-xs text-slate-400">Owner, Forester Ave Express Laundry Center</span>
           </div>
         </div>
       </div>
@@ -492,16 +509,38 @@ const roadmapItems = [
         <p class="text-base text-white/40 font-light mb-10 leading-relaxed">
           Join as a founding member and get 90 days free. You'll shape what WashPilot builds next — and lock in a founding rate before we open to the public.
         </p>
-        <div class="flex flex-col gap-3 w-full max-w-md mx-auto mb-4">
+        <form
+          v-if="!submitted"
+          name="early-access"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="flex flex-col gap-3 w-full max-w-md mx-auto mb-4"
+          @submit.prevent="handleSubmit"
+        >
+          <input type="hidden" name="form-name" value="early-access" />
+          <input name="bot-field" class="hidden" />
           <input
             v-model="email"
             type="email"
+            name="email"
             placeholder="your@email.com"
+            required
             class="flex-1 px-5 py-[0.9375rem] bg-white/[0.07] border border-white/[0.12] rounded-[10px] text-base text-white placeholder-white/25 outline-none focus:border-blue-400 transition-colors font-sans"
           />
-          <button class="bg-[#2563eb] hover:bg-[#3b82f6] hover:shadow-[0_8px_24px_rgba(37,99,235,0.45)] text-white border-0 px-7 py-[0.9375rem] rounded-[10px] font-display text-base font-semibold cursor-pointer transition-all whitespace-nowrap">
-            Claim Founding Access
+          <button
+            type="submit"
+            :disabled="submitting"
+            class="bg-[#2563eb] hover:bg-[#3b82f6] hover:shadow-[0_8px_24px_rgba(37,99,235,0.45)] text-white border-0 px-7 py-[0.9375rem] rounded-[10px] font-display text-base font-semibold cursor-pointer transition-all whitespace-nowrap disabled:opacity-60"
+          >
+            {{ submitting ? 'Submitting…' : 'Claim Founding Access' }}
           </button>
+        </form>
+        <div
+          v-else
+          class="w-full max-w-md mx-auto mb-4 px-5 py-[0.9375rem] bg-white/[0.07] border border-green-400/30 rounded-[10px] text-green-400 text-base font-medium"
+        >
+          You're on the list! We'll be in touch soon.
         </div>
         <p class="text-xs text-white/25">No credit card. No commitment. Built by a laundromat owner, for laundromat owners.</p>
       </div>
@@ -510,8 +549,8 @@ const roadmapItems = [
     <!-- ── FOOTER ── -->
     <footer class="bg-[#0a1628] border-t border-white/[0.05] py-8">
       <div class="max-w-6xl mx-auto px-5 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <img :src="logoDark" alt="WashPilot" class="h-7 w-auto opacity-60" />
-        <p class="text-xs text-white/20">© 2025 WashPilot. All rights reserved.</p>
+        <img :src="logoDark" alt="WashPilot" class="h-7 w-auto" />
+        <p class="text-xs text-white/20">© 2026 WashPilot. All rights reserved.</p>
         <ul class="flex gap-8 list-none m-0 p-0">
           <li v-for="link in ['Privacy', 'Terms', 'Contact']" :key="link">
             <a href="#" class="text-xs text-white/25 hover:text-white/60 transition-colors no-underline">{{ link }}</a>

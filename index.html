@@ -10,6 +10,10 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Netlify Forms build-time detection for SPA -->
+    <form name="early-access" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+    </form>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
