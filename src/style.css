@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Clash Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
