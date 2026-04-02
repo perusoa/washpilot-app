@@ -552,8 +552,8 @@ const roadmapItems = [
         <img :src="logoDark" alt="WashPilot" class="h-7 w-auto" />
         <p class="text-xs text-white/20">© 2026 WashPilot. All rights reserved.</p>
         <ul class="flex gap-8 list-none m-0 p-0">
-          <li v-for="link in ['Privacy', 'Terms', 'Contact']" :key="link">
-            <a href="#" class="text-xs text-white/25 hover:text-white/60 transition-colors no-underline">{{ link }}</a>
+          <li>
+            <RouterLink to="/privacy-policy" class="text-xs text-white/25 hover:text-white/60 transition-colors no-underline">Privacy Policy</RouterLink>
           </li>
         </ul>
       </div>
