@@ -3,4 +3,19 @@
 @theme {
   --font-display: 'Clash Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink: #0a1628;
+  --color-deep: #0f1f3d;
+  --color-brand: #1e4fa0;
+  --color-signal: #2563eb;
+  --color-sky: #93c5fd;
+  --color-cyan: #67e8f9;
+  --color-paper: #f5f7fb;
+  --color-line: #e3e8f2;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
